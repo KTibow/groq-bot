@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Groq Bot debug</title>
+  </head>
+  <body>
+    <pre id="output"></pre>
+    <script type="module">
+      async function decompressGzip(data) {
+        const decompressedData = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          const blob = new Blob([data]);
+          const gzip = new Response(blob).arrayBuffer();
+
+          gzip
+            .then((buffer) => {
+              const decompressed = pako.inflate(new Uint8Array(buffer), {
+                to: "string",
+              });
+              resolve(decompressed);
+            })
+            .catch(reject);
+        });
+        return decompressedData;
+      }
+      const params = new URLSearchParams(window.location.search);
+      const encodedText = params.get("text");
+
+      if (encodedText) {
+        try {
+          // Decode base64
+          const binaryString = atob(encodedText);
+          const binaryLen = binaryString.length;
+          const bytes = new Uint8Array(binaryLen);
+          for (let i = 0; i < binaryLen; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+          }
+
+          // Decompress using gzip
+          const decompressed = await decompressGzip(bytes);
+          document.getElementById("output").textContent = decompressed;
+        } catch (error) {
+          document.getElementById("output").textContent =
+            "Error: " + error.message;
+        }
+      } else {
+        document.getElementById("output").textContent =
+          "No text parameter provided.";
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.11/pako.min.js"></script>
+  </body>
+</html>

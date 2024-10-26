@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "discord-interactions": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "prettier": "^3.3.3",
+    "wrangler": "^3.83.0"
+  }
+}

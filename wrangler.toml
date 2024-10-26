@@ -1,0 +1,6 @@
+name = "groq-bot"
+main = "src/main.ts"
+compatibility_date = "2024-09-02"
+
+[vars]
+DISCORD_PUBLIC_KEY = "0da351d43eefd0b796c5b8747652b98162b389644260b5f60eb7a4082a3569f3"
