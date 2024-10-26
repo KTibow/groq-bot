@@ -28,9 +28,10 @@ Groq currently has these models:
 - llama-guard-3-8b (content moderation; see https://console.groq.com/docs/content-moderation)
 - llama3-70b-8192
 - llama3-8b-8192
-- llava-v1.5-7b-4096-preview (this can see images, although it's not recent)
 - mixtral-8x7b-32768
 - whisper-large-v3
+- whisper-large-v3-turbo
+- llava-v1.5-7b-4096-preview (this can see images, although it's not recent)
 
 Llama 405B once ran, but it isn't currently running due a lack of capacity.
 

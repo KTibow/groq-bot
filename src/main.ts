@@ -74,7 +74,12 @@ export default {
               content: `<query>${messageContent}</query>
 1. List relevant quotes from the reference
 2. Take a moment to make sure that you'll respond to the query as if you're an expert who's learned the reference instead of as someone verbosely quoting it
-3. Reply to the query. Use 1-3 sentences, but you can also use Markdown-style links and code blocks. Aim to be precise, preferring more general or discrete statements over guessing and saying something is "likely". Linking channels/websites is good. Put your reply in <reply></reply>.`,
+3. Reply to the query.
+Formatting guide:
+- Use 1-3 sentences
+- You can use provided links. https://example.com is a good link. [some text](https://example.com) is a good link. <#1207719622040879154> is a good link. These are the ONLY link formats you can use; other formats will CRASH.
+- You can use \`code\` and \`\`\` for short and long code.
+Aim to be precise, preferring more general or discrete statements over guessing and saying something is "likely". Linking channels/websites is good. Put your reply in <reply></reply>.`,
             },
           ],
           model: "llama-3.1-70b-versatile",
