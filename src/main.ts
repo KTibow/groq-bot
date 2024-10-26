@@ -5,6 +5,17 @@ import {
 } from "discord-interactions";
 import guide from "./guide.js";
 
+async function compressAndEncode(input) {
+  const encoder = new TextEncoder();
+  const gzipStream = new CompressionStream("gzip");
+  const writer = gzipStream.writable.getWriter();
+  writer.write(encoder.encode(input));
+  writer.close();
+
+  const compressed = await new Response(gzipStream.readable).arrayBuffer();
+  return btoa(String.fromCharCode(...new Uint8Array(compressed)));
+}
+
 export default {
   async fetch(request: Request, env, ctx) {
     if (request.method != "POST") {
@@ -78,7 +89,7 @@ export default {
     return Response.json({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: answer,
+        content: `${answer} [(debug this)](https://ktibow.github.io/groq-bot/?text=${encodeURIComponent(await compressAndEncode(text.split("<reply>")[0]))})`,
       },
     });
     // } catch (error) {
