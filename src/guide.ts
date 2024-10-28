@@ -1,14 +1,18 @@
 const guide = `## Billing
 
-Right now, Groq is entirely free with limits.
+Right now, there are 3 plans:
+- Free with limits
+- Pay as you go
+- Enterprise
 
-Some developers and enterprises are already paying. If you're an enterprise, consider reaching out to \`sales@groq.com\`.
+The default is free with limits. If you want to move up to a paid plan, you have to either:
+- Contact \`sales@groq.com\`
+- DM staff like hozen or eMac
+However, both of these ways may take time, as many people are trying to get on.
 
-Paid plans will come in the future. Info about them:
-
-- I don't know when
-- They'll come when Groq has enough capacity
-- The current free tier will be replaced with one where it's free until you run out of credits
+In the future (I don't know when), Groq will have enough capacity to let anyone pay, and the plans will change to this:
+- Pay as you go (with some free credits)
+- Enterprise
 
 ## Models and limits
 
