@@ -61,7 +61,6 @@ See: https://console.groq.com/docs/rate-limits
 It's very simple.
 
 Options:
-
 - Use OpenAI SDK but swap out the base and key
 - Use Groq SDK
   See: https://console.groq.com/docs/quickstart
@@ -72,6 +71,30 @@ curl -X POST "https://api.groq.com/openai/v1/chat/completions" \
  -H "Authorization: Bearer $GROQ_API_KEY" \
  -H "Content-Type: application/json" \
  -d '{"messages": [{"role": "user", "content": "Explain the importance of fast language models"}], "model": "llama-3.1-8b-instant"}'
+
+### Vision
+
+To send images, use the more complex \`content\` format.
+
+Example of this format:
+\`\`\`
+[
+  {
+    "type": "text",
+    "text": "What's in this image?",
+  },
+  {
+    "type": "image_url",
+    "image_url": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/LPU-v1-die.jpg",
+    },
+  },
+]
+\`\`\`
+
+Note:
+- This format is only for \`content\`
+- Data URIs (like \`data:image/jpeg;base64,YOUR_IMAGE_BASE64\`) work as well
 
 ## Custom models
 

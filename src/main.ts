@@ -89,12 +89,17 @@ Aim to be precise, preferring more general or discrete statements over guessing 
 
     const groqData = await groqResponse.json();
     const text = groqData.choices[0].message.content;
+    const thinking = text.split("<reply>")[0];
     const answer = text.match(/<reply>(.*?)<\/reply>/s)[1];
 
     return Response.json({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: `${answer} [(debug this)](https://ktibow.github.io/groq-bot/?text=${encodeURIComponent(await compressAndEncode(text.split("<reply>")[0]))})`,
+        content:
+          answer +
+          (thinking
+            ? ` [(debug this)](https://ktibow.github.io/groq-bot/?text=${encodeURIComponent(await compressAndEncode(thinking))})`
+            : ""),
       },
     });
     // } catch (error) {
