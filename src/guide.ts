@@ -43,8 +43,6 @@ Groq can't add new models with licenses that don't allow running them commercial
 
 The free tier has limits.
 
-You aren't allowed to evade the limits (eg by using multiple accounts). If you do, you'll get banned.
-
 See: https://console.groq.com/docs/rate-limits
 
 ## Planned and nonplanned feautres
@@ -55,6 +53,14 @@ See: https://console.groq.com/docs/rate-limits
 - Faster performance: Currently being engineered
 - Logprobs: Possible but not engineered yet
 - Tokenization: Out of scope
+
+## Accounts
+
+You aren't allowed to evade the limits (eg by using multiple accounts). If you do, you'll get banned.
+
+If you get a 404 error on every request to the console/API, disable your VPN. Use from China also doesn't work (it's not supported, you're in a bit of a tricky spot if so due to some VPNs being blocked).
+
+These restrictions had to be implemented since, sadly, there are a lot of bad actors out there.
 
 ## Use
 
