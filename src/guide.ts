@@ -3,16 +3,11 @@ const guide = `## Billing
 Right now, there are 3 plans:
 - Free with limits
 - Pay as you go
+(Right now to get on this plan, contact Hatice Ozen at https://x.com/messages/compose?recipient_id=1815404957262065665)
 - Enterprise
+(To get on this plan, email \`sales@groq.com\`, although they may be slow to respond)
 
-The default is free with limits. If you want to move up to a paid plan, you have to either:
-- Contact \`sales@groq.com\`
-- DM staff like hozen or eMac
-However, both of these ways may take time, as many people are trying to get on.
-
-In the future (I don't know when), Groq will have enough capacity to let anyone pay, and the plans will change to this:
-- Pay as you go (with some free credits)
-- Enterprise
+In the future (I don't know when), Groq will have enough capacity for anyone to easily get on pay as you go. There will still be a free tier then. It might still be limit based or it might switch to credit based.
 
 ## Models and limits
 
@@ -45,12 +40,18 @@ The free tier has limits.
 
 See: https://console.groq.com/docs/rate-limits
 
+## Speed
+
+Smaller models are faster, but don't have as much world knowledge or intelligence. For example, Llama 3.2 1B runs at 3000 tokens/s, in comparison to Llama 3.1 70B at 250 tokens/s.
+
+Speculative decoding can make Llama 70B run much faster. For predictable outputs, speculative decoding can reach 2500 tokens/s. In other scenarios, it's still faster, at 1660-2000 tokens/s. Speculative decoding is currently available in beta for select customers (including pay-as-you-go) with the model ID "llama-3.1-70b-specdec". It doesn't lose accuracy, but it's slightly pricier at $0.99/million output tokens (compared to $0.79/million for standard decoding).
+
 ## Planned and nonplanned feautres
 
-- Paid tiers: Once there's enough capacity (currently all going to running 70b for free)
+- Easy access to paid tiers: Once there's enough capacity (currently all going to running 70b for free)
 - Llama 405b: Once there's enough capacity
 - Embeddings: Currently being engineered
-- Faster performance: Currently being engineered
+- Faster performance: The current hardware is going as fast as it can. Groq is working on a new, thinner chip that will be faster.
 - Logprobs: Possible but not engineered yet
 - Tokenization: Out of scope
 
