@@ -53,6 +53,7 @@ Speculative decoding can make Llama 70B run much faster. For predictable outputs
 - Embeddings: Currently being engineered
 - Faster performance: The current hardware is going as fast as it can. Groq is working on a new, thinner chip that will be faster.
 - Logprobs: Possible but not engineered yet
+- Text to speech: A common feature request but not engineered yet
 - Tokenization: Out of scope
 
 ## Accounts
