@@ -18,7 +18,8 @@ Groq currently has these models:
 - llama3-groq-70b-8192-tool-use-preview (good at "tool use", the practice of taking actions and retrieving information on behalf of the user; see https://console.groq.com/docs/tool-use)
 - llama3-groq-8b-8192-tool-use-preview (same as above)
 - distil-whisper-large-v3-en
-- llama-3.1-70b-versatile (usually the best model)
+- llama-3.3-70b-versatile (usually the best model)
+- llama-3.1-70b-versatile
 - llama-3.1-8b-instant
 - llama-3.2-1b-preview
 - llama-3.2-3b-preview
@@ -32,8 +33,6 @@ Groq currently has these models:
 - whisper-large-v3-turbo
 - llava-v1.5-7b-4096-preview (this can see images, although it's not recent)
 
-Llama 405B once ran, but it isn't currently running due a lack of capacity.
-
 Groq can't add new models with licenses that don't allow running them commercially (eg Mistral/Cohere models).
 
 The free tier has limits.
@@ -44,12 +43,12 @@ See: https://console.groq.com/docs/rate-limits
 
 Smaller models are faster, but don't have as much world knowledge or intelligence. For example, Llama 3.2 1B runs at 3000 tokens/s, in comparison to Llama 3.1 70B at 250 tokens/s.
 
-Speculative decoding can make Llama 70B run much faster. For predictable outputs, speculative decoding can reach 2500 tokens/s. In other scenarios, it's still faster, at 1660-2000 tokens/s. Speculative decoding is currently available in beta for select customers (including pay-as-you-go) with the model ID "llama-3.1-70b-specdec". It doesn't lose accuracy, but it's slightly pricier at $0.99/million output tokens (compared to $0.79/million for standard decoding).
+Speculative decoding can make Llama 70B run much faster. For predictable outputs, speculative decoding can reach 2500 tokens/s. In other scenarios, it's still faster, at 1660-2000 tokens/s. Speculative decoding is currently available in beta with some models for select customers (including pay-as-you-go), and can be accessed with the IDs "llama-3.3-70b-specdec" or "llama-3.1-70b-specdec". It doesn't lose accuracy, but it's slightly pricier at $0.99/million output tokens (compared to $0.79/million for standard sampling).
 
 ## Planned and nonplanned feautres
 
 - Easy access to paid tiers: Once there's enough capacity (currently all going to running 70b for free)
-- Llama 405b: Once there's enough capacity
+- Llama 405B: Previously ran, might run again once there's enough capacity
 - Embeddings: Currently being engineered
 - Faster performance: The current hardware is going as fast as it can. Groq is working on a new, thinner chip that will be faster.
 - Logprobs: Possible but not engineered yet
