@@ -43,7 +43,7 @@ export default {
         }),
         {
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     }
 
@@ -84,13 +84,15 @@ Aim to be precise, preferring more general or discrete statements over guessing 
           ],
           model: "llama-3.1-70b-versatile",
         }),
-      }
+      },
     );
 
     const groqData = await groqResponse.json();
     const text = groqData.choices[0].message.content;
     const thinking = text.split("<reply>")[0];
-    const answer = text.match(/<reply>(.*?)<\/reply>/s)[1];
+    const answer = text
+      .match(/<reply>(.*?)<\/reply>/s)[1]
+      .replace(/\[([^\]]+)\]\(\1\)/g, "$1");
 
     return Response.json({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
