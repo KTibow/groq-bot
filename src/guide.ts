@@ -3,7 +3,7 @@ const guide = `## Billing
 Right now, there are 3 plans:
 - Free with limits
 - Pay as you go
-(Right now to get on this plan, contact Hatice Ozen at https://x.com/messages/compose?recipient_id=1815404957262065665)
+(To get on this plan, go to https://console.groq.com, click "Chat with us" on bottom left, click Send us a message -> Account -> Dev Tier, and send your Organization ID)
 - Enterprise
 (To get on this plan, email \`sales@groq.com\`, although they may be slow to respond)
 
