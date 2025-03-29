@@ -51,10 +51,20 @@ export default {
       return new Response("Invalid interaction type", { status: 400 });
     }
 
+    // Handle the "Tag - Not Found" command (ID: 1355581376979665148)
+    if (interaction.data.id === "1355581376979665148") {
+      return Response.json({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: `This looks like a Not Found error. These typically mean that your internet provider was blocked to protect Groq. Try again with a different internet connection.`,
+        },
+      });
+    }
+
+    // Handle the original command (ask Groq)
     const messageContent =
       interaction.data.resolved.messages[interaction.data.target_id].content;
 
-    // try {
     const groqResponse = await fetch(
       "https://api.groq.com/openai/v1/chat/completions",
       {
@@ -82,7 +92,7 @@ Formatting guide:
 Aim to be precise, preferring more general or discrete statements over guessing and saying something is "likely". Linking channels/websites is good. Put your reply in <reply></reply>.`,
             },
           ],
-          model: "llama-3.1-70b-versatile",
+          model: "llama-3.3-70b-versatile",
         }),
       },
     );
@@ -104,14 +114,5 @@ Aim to be precise, preferring more general or discrete statements over guessing 
             : ""),
       },
     });
-    // } catch (error) {
-    //   return Response.json({
-    //     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-    //     data: {
-    //       content: "Sorry, I couldn't generate a response at this time.",
-    //       flags: 64,
-    //     },
-    //   });
-    // }
   },
 };
