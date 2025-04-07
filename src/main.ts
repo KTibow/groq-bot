@@ -92,7 +92,7 @@ Formatting guide:
 Aim to be precise, preferring more general or discrete statements over guessing and saying something is "likely". Linking channels/websites is good. Put your reply in <reply></reply>.`,
             },
           ],
-          model: "llama-3.3-70b-versatile",
+          model: "meta-llama/llama-4-scout-17b-16e-instruct",
         }),
       },
     );
