@@ -119,7 +119,7 @@ Groq is a company that makes their own AI hardware and hosts it.
 
 Groq runs the LPU (Language Processing Unit), a term referring to an arrangement of Groq chips. This is why it's faster.
 
-Groq stores 8 bit weights but uses 16 bit computation.
+Groq uses weights quantized to 8 bits but uses 16 bit computation. This doesn't lose much quality.
 
 While both Groq and Elon Musk's Grok came from the word "grok", Groq has a trademark and Grok doesn't.
 
